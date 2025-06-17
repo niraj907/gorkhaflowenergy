@@ -2,6 +2,7 @@ from email.message import EmailMessage
 from smtplib import SMTPException
 from django.conf import settings
 from django.shortcuts import render
+from django.core.mail import EmailMultiAlternatives
 
 from django.http import HttpResponse, JsonResponse
 from django.template.loader import render_to_string
@@ -80,13 +81,13 @@ def contact(request):
                     'message_message': message_message,
                 })
 
-                email_msg = EmailMessage(
-                    subject='Contact Us Message from Gorkha-Hills website',
-                    body=email_body,
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    to=['gamejoker388@gmail.com'],
-                )
-                email_msg.content_subtype = "html"
+                email_msg = EmailMultiAlternatives(
+                subject='Contact Us Message from Gorkha-Hills website',
+                body='This is a fallback plain text version.',
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=['gamejoker388@gmail.com'],
+            )
+                email_msg.attach_alternative(email_body, "text/html")
                 email_msg.send()
 
                 # Save the form data to the database
