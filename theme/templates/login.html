@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}
+    Login
+{% endblock title %}
+
 {% block content %}
 
 <div class="flex flex-col md:flex-row h-screen w-full">
@@ -13,8 +17,8 @@
   </div>
 
   <!-- Login Form Section -->
-  <div class="w-full md:w-1/2 flex items-center justify-center px-6 py-12 bg-[#E4E6F2]">
-    <form class="w-full max-w-md space-y-6 py-24">
+  <div class="w-full md:w-1/2 flex items-center justify-center px-6 py-24 md:py-12 bg-[#E4E6F2]">
+    <form class="w-full max-w-md space-y-6">
     <div>
         <h2 class="text-3xl font-bold text-gray-800">Sign in</h2>
         <p class="text-sm text-gray-500 mt-2">Welcome back! Please sign in to continue</p>
