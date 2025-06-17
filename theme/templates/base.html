@@ -9,8 +9,12 @@
     </title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		{% tailwind_css %}
+
+      <link rel="icon" type="image/jpg" href="{% static 'img/logo.jpg' %}" />
 
   <link href="{% static 'css/dist/styles.css' %}" rel="stylesheet">
     <script src=
@@ -44,7 +48,7 @@
         <li><a class="hover:text-white/70 transition" href="#">Status</a></li>
         <li><a class="hover:text-white/70 transition" href="#">Work Progress</a></li>
         <li><a class="hover:text-white/70 transition" href="#">Site Progress</a></li>
-        <li><a class="hover:text-white/70 transition" href="#">News</a></li>
+        <li><a class="hover:text-white/70 transition" href="{% url 'news' %}">News</a></li>
         <li><a class="hover:text-white/70 transition" href="#">Organization</a></li>
         <li><a class="hover:text-white/70 transition" href="#">Project Info</a></li>
         <li><a class="hover:text-white/70 transition" href="{% url 'contact' %}" >Contact</a></li>
@@ -87,7 +91,7 @@
             <a class="text-sm" href="#">Site Progress</a>
           </li>
           <li>
-            <a class="text-sm" href="#">News</a>
+            <a class="text-sm"  href="{% url 'news' %}">News</a>
           </li>
           <li>
             <a class="text-sm" href="#">Organization</a>

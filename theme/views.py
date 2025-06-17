@@ -15,7 +15,12 @@ def document(request):
     return render(request, 'document.html')
 def view(request):
     return render(request, 'view.html')
-
+def news(request):
+    return render(request, 'news.html')
+def readmore(request):
+    return render(request, 'readmore.html')
+def contact(request):
+    return render(request, 'contact.html')
 def login(request):
     return render(request, 'login.html')
 def signup(request):
