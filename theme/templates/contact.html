@@ -6,7 +6,7 @@
 
 {% block content %}                                                
 <section class="py-24">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 grid-cols-1">
             <div class="lg:mb-0 mb-10">
                 <div class="group w-full h-full">
@@ -39,8 +39,6 @@
                     </div>
                 </div>
             </div>
-
-       
             <form id ="contactForm" class="bg-gray-50 p-5 lg:p-11 lg:rounded-r-2xl rounded-2xl">
                 <h2 class="text-indigo-600 font-manrope text-4xl font-semibold leading-10 mb-11">Send Us A Message</h2>
                 <input type="text" class="w-full h-12 text-gray-600 placeholder-gray-400  shadow-sm bg-transparent text-lg font-normal leading-7 rounded-md border border-gray-200 focus:outline-none pl-4 mb-10" placeholder="Name"  required >
@@ -49,7 +47,14 @@
                 <input type="text" class="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg shadow-sm font-normal leading-7 rounded-md border border-gray-200 focus:outline-none pl-4 mb-10" placeholder="Message"  required >
                 <button type="submit" class="w-full h-12 text-white text-base font-semibold leading-6 rounded-full transition-all duration-700 hover:bg-indigo-800 bg-indigo-600 shadow-sm">Send</button>
         </form>
-      </div>
-    </section>
-                      
-    {% endblock %}
+    </div>
+</section>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Thank you for your message!');
+        this.reset();
+    });
+</script>
+{% endblock %}

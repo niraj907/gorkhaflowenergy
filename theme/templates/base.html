@@ -40,7 +40,7 @@
     <ul class="text-white md:flex hidden items-center gap-6 nav_header">
      <li><a class="hover:text-white/70 transition" href="{% url 'index' %}">Home</a></li>
 
-        <li><a class="hover:text-white/70 transition" href="#">Document</a></li>
+        <li><a class="hover:text-white/70 transition" href="{% url 'document' %}">Document</a></li>
         <li><a class="hover:text-white/70 transition" href="#">Status</a></li>
         <li><a class="hover:text-white/70 transition" href="#">Work Progress</a></li>
         <li><a class="hover:text-white/70 transition" href="#">Site Progress</a></li>
@@ -75,7 +75,7 @@
             <a class="text-sm" href="{% url 'index' %}">Home</a>
           </li>
           <li>
-            <a class="text-sm" href="#">Document</a>
+            <a class="text-sm" href="{% url 'document' %}">Document</a>
           </li>
           <li>
             <a class="text-sm" href="#">Status</a>
