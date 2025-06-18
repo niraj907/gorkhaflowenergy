@@ -16,8 +16,13 @@
 
       <link rel="icon" type="image/jpg" href="{% static 'img/logo.jpg' %}" />
 
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <link href="{% static 'css/dist/styles.css' %}" rel="stylesheet">
-    <script src=
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
+  
+  <script src=
 "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
     </script>
 	</head>
@@ -49,6 +54,7 @@
         <li><a class="hover:text-white/70 transition" href="#">Work Progress</a></li>
         <li><a class="hover:text-white/70 transition" href="#">Site Progress</a></li>
         <li><a class="hover:text-white/70 transition" href="{% url 'news' %}">News</a></li>
+        <li><a class="hover:text-white/70 transition" href="{% url 'galley' %}" >Galley</a></li>
         <li><a class="hover:text-white/70 transition" href="#">Organization</a></li>
         <li><a class="hover:text-white/70 transition" href="#">Project Info</a></li>
         <li><a class="hover:text-white/70 transition" href="{% url 'contact' %}" >Contact</a></li>
@@ -61,11 +67,11 @@
 </a>
 
 
-<div class="py-6 text-[1rem]">
+<!-- <div class="py-6 text-[1rem]">
 			  <h2 class="text-white">Designed By :</h2>
 			  <h2 class="text-yellow-600" >GorkhaSoft Pvt.Ltd</h2>
 			  <h2 class="text-white">Email: softgorkha@gmail.com</h2>
-			</div>
+			</div> -->
 
     <button aria-label="menu-btn" type="button" class="menu-btn inline-block md:hidden active:scale-90 transition">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="#fff">
@@ -92,6 +98,9 @@
           </li>
           <li>
             <a class="text-sm"  href="{% url 'news' %}">News</a>
+          </li>
+          <li>
+            <a class="text-sm"  href="{% url 'galley' %}" >Galley</a>
           </li>
           <li>
             <a class="text-sm" href="#">Organization</a>
@@ -178,5 +187,7 @@
       <p class="pt-4 text-center text-xs md:text-sm pb-5">Copyright 2024 © Company name. All Right Reserved.</p>
     </footer>
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
   </body>
 </html>
