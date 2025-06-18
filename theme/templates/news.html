@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+    News
+{% endblock title %}
+
+{% block content %}
+
+<section class="bg-white py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <h1 class="text-center text-xl md:text-4xl font-bold text-gray-900 mb-12">Latest News</h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
+      
+      {% for _ in "123"|make_list %}
+      <!-- News Card -->
+      <div class="bg-white rounded-lg shadow-md max-w-sm w-full hover:shadow-lg transition-shadow duration-300">
+        <img class="rounded-t-lg h-48 w-full object-cover" src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=400" alt="News Image">
+
+        <div class="p-5">
+          <p class="text-gray-400 text-sm font-semibold text-right">23/06/2023</p>
+          <h2 class="text-gray-900 text-xl font-semibold mt-2">Your Card Title</h2>
+          <p class="text-gray-600 my-3 line-clamp-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <a href="{% url 'readmore' %}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded font-medium transition-colors duration-200">
+            Read More
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+      
+    </div>
+  </div>
+</section>
+
+{% endblock %}
