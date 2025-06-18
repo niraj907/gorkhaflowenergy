@@ -33,10 +33,12 @@
 <body>
 
     
-<nav class="h-[70px] px-8 w-full fixed  flex items-center justify-between z-30 bg-gradient-to-r from-indigo-700 to-violet-500 transition-all">
-        
+<nav class="w-full fixed  top-0 z-30 bg-gradient-to-r from-indigo-700 to-violet-500 shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2 h-[70px] flex items-center justify-between">
+        <!-- Logo -->
+          
     <a href="{% url 'index' %}">
-        <img class="h-9" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoWhite.svg" alt="dummyLogoWhite">
+        <img class="h-9" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoWhite.svg" alt="Logo">
     </a>
 
     <ul class="text-white md:flex hidden items-center gap-6 nav_header">
@@ -52,8 +54,9 @@
         <li><a class="hover:text-white/70 transition" href="{% url 'contact' %}" >Contact</a></li>
     </ul>
 
-
-<a href="{% url 'login' %}" class="bg-orange-500 btn_login text-white md:inline hidden text-sm hover:opacity-90 active:scale-95 transition-all py-2 px-4 rounded-md cursor-pointer">
+        <!-- Login Button (Desktop) -->
+  
+<a href="{% url 'login' %}" class="bg-orange-500 text-white hidden md:inline text-sm hover:opacity-90 active:scale-95 transition-all py-2 px-4 rounded-md">
     Login
 </a>
 
@@ -174,5 +177,6 @@
       </div>
       <p class="pt-4 text-center text-xs md:text-sm pb-5">Copyright 2024 © Company name. All Right Reserved.</p>
     </footer>
+    <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>
