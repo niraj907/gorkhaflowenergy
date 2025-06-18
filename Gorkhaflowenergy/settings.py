@@ -107,6 +107,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+RECAPTCHA_PUBLIC_KEY = '6LchtWMrAAAAANTtLfTnXmLQ0b-6I51wTbU3K_07'
+RECAPTCHA_PRIVATE_KEY = '6LchtWMrAAAAAIF43Y9z23jzYWfczdjdz3urgSqC'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # or your SMTP server
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'gamejoker388@gmail.com'
+EMAIL_HOST_PASSWORD = 'vvee qhzl vwmc rrdd'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

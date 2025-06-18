@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Sherpa Sewa Kendra</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f3f5;
+        color: #333;
+      }
+      .email-wrapper {
+        max-width: 600px;
+        margin: 40px auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      .header {
+        background-color: #5476c1;
+        background-size: cover;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        color: white;
+        position: relative;
+        justify-content: center;
+      }
+      .header h1 {
+        z-index: 1;
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      
+      .content {
+        padding: 10px 20px;
+      }
+      .content p {
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+      
+      .content .label {
+        font-weight: bold;
+      }
+      
+      .button-container {
+        text-align: center;
+        margin: 30px 0;
+      }
+      .button {
+        background-color: #2047a8;
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 5px;
+        font-weight: bold;
+        display: inline-block;
+      }
+      .button:hover {
+        background-color: #5476c1;
+      }
+      
+      .footer {
+        text-align: center;
+        font-size: 13px;
+        color: #777;
+        padding: 20px;
+        background-color: #5476c1;
+        color: #fff;
+      }
+      .footer a {
+        color: #f4d35e;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-wrapper">
+      <div class="header">
+        <h1 class="text-center">Sherpa Sewa Kendra</h1>
+      </div>
+      <div class="content">
+        <p>
+          <span class="label">From:</span> {{ name }}
+        </p>
+        <p>
+          <span class="label">Email:</span> {{ message_email }}
+        </p>
+        <p>
+          <span class="label">Phone:</span> {{ message_phone_number }}
+        </p>
+        <p>
+          <span class="label">Message:</span><br />{{ message_message }}
+        </p>
+        <div class="button-container">
+          <a href="mailto:{{ message_email }}" class="button">Reply</a>
+        </div>
+      </div>
+      <div class="footer">
+        <p>
+          If you have any questions, please <a href="mailto:support@example.com">contact us</a>.
+        </p>
+        <p>&copy; 2024 Sherpa Sewa Kendra. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>
