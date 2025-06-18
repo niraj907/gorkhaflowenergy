@@ -5,3 +5,5 @@ from .models import *
 class ContactMessageAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'submitted_at')
     readonly_fields = ('name', 'email', 'submitted_at', 'message','contact_Number')
+
+admin.site.register(Document)
