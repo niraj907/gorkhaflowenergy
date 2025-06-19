@@ -28,3 +28,14 @@ class ContactMessage(models.Model):
         
         verbose_name = "Contact Message"
         verbose_name_plural = "Contact Messages"
+
+
+class Document(models.Model):
+    title = models.CharField(max_length=255)
+    file = models.FileField(upload_to='documents/')
+
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = "Document"
+        verbose_name_plural = "Documents"

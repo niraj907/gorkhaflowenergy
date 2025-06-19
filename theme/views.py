@@ -3,29 +3,35 @@ from smtplib import SMTPException
 from django.conf import settings
 from django.shortcuts import render
 from django.core.mail import EmailMultiAlternatives
-
 from django.http import HttpResponse, JsonResponse
 from django.template.loader import render_to_string
-
 from theme.forms import ContactForm
+from theme.models import *
 
 
 def index(request):
     return render(request, 'hero.html')
-def document(request):
-    return render(request, 'document.html')
+
+def documents_view(request):
+    documents = Document.objects.all()
+    return render(request, 'document.html', {'documents': documents})
+
 def view(request):
     return render(request, 'view.html')
+
 def news(request):
     return render(request, 'news.html')
 def gallery(request):
     return render(request, 'gallery.html')
 def readmore(request):
     return render(request, 'readmore.html')
+
 def contact(request):
     return render(request, 'contact.html')
+
 def login(request):
     return render(request, 'login.html')
+
 def signup(request):
     return render(request, 'signup.html')
 
