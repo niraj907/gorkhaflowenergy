@@ -8,15 +8,33 @@
 
 {% block content %}
   <div class="bg-[url('https://t4.ftcdn.net/jpg/09/51/61/57/360_F_951615734_Hl4NNfyTDcWOWkAlH4Pz8s0BcrlEzdow.jpg')] h-screen bg-cover bg-center text-white">
-    <!-- Background overlay for better readability -->
-    <div class="h-full w-full flex items-center">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold mb-2">Gorkha Flow (4.06 MW)</h2>
-        <h3 class="text-xl font-semibold mb-4">Developed by: Gorkha Flow Ltd</h3>
+    
+    <!-- Overlay container -->
+    <div class="h-full w-full flex flex-col lg:flex-row items-start lg:items-center justify-between">
 
-        <h3 class="text-xl font-semibold mb-2">GorkhaFlow Hydropower Project</h3>
-        <p class="text-[12px] leading-relaxed max-w-2xl">GorkhaFlow Hydropower Project is a cascade-type hydropower project that utilizes water from the outlet of the Upper Chirkhwa Hydropower Project. Located in Sadananda Municipality, Bhojpur District, Province 1, this project efficiently harnesses water resources for power generation.</p>
+      <!-- Left section (Text Content) -->
+      <div class="container mx-auto px-6 py-8 lg:py-0">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">Gorkha Flow (4.06 MW)</h2>
+        <h3 class="text-lg md:text-xl font-semibold mb-4">Developed by: Gorkha Flow Ltd</h3>
+
+        <h3 class="text-lg md:text-xl font-semibold mb-2">GorkhaFlow Hydropower Project</h3>
+        <p class="text-sm md:text-base leading-relaxed max-w-2xl">
+          GorkhaFlow Hydropower Project is a cascade-type hydropower project that utilizes water from the outlet of the Upper Chirkhwa Hydropower Project. Located in Sadananda Municipality, Bhojpur District, Province 1, this project efficiently harnesses water resources for power generation.
+        </p>
       </div>
+
+      <!-- Right section (News) -->
+      <div class="bg-[#E8F5FD] text-black w-full h-full lg:w-96 p-6 mt-6 lg:mt-0">
+        <h1 class="border-b-2 border-black text-4xl font-semibold text-center text-blue-600">News</h1>
+
+ {% for _ in "12"|make_list %}
+        <div class="py-2 border-b border-black text-sm">
+          This is to inform all shareholders that each shareholder's personal message box will be updated every Friday 10:00 AM to 11:00 AM and work progress at the site will be updated each day. Please check your message box accordingly.
+          <br><sub class="text-indigo-400">-April 16, 2023</sub>
+        </div>
+ {% endfor %}
+ 
+
     </div>
   </div>
 {% endblock %}

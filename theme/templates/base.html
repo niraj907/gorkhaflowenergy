@@ -48,10 +48,8 @@
 
         <a href="{% url 'index' %}"><img class="h-9" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoWhite.svg" alt="Logo" /></a>
 
-        <ul class="text-white md:flex hidden items-center gap-6 nav_header">
-          <li>
-            <a class="hover:text-white/70 transition" href="{% url 'index' %}">Home</a>
-          </li>
+    <ul class="text-white md:flex hidden items-center gap-3 nav_header">
+     <li><a class="hover:text-white/70 transition" href="{% url 'index' %}">Home</a></li>
 
           <li>
             <a class="hover:text-white/70 transition" href="{% url 'documents' %}">Document</a>
@@ -83,11 +81,12 @@
 
         <a href="{% url 'login' %}" class="bg-orange-500 text-white hidden md:inline text-sm hover:opacity-90 active:scale-95 transition-all py-2 px-4 rounded-md">Login</a>
 
-        <div class="py-6 text-[1rem]">
-          <h2 class="text-white">Designed By :</h2>
-          <h2 class="text-yellow-600">GorkhaSoft Pvt.Ltd</h2>
-          <h2 class="text-white">Email: softgorkha@gmail.com</h2>
-        </div>
+
+<div class="text-[1rem]">
+			  <h2 class="text-white">Designed By :</h2>
+			  <h2 class="text-yellow-600" >GorkhaSoft Pvt.Ltd</h2>
+			  <h2 class="text-white">Email: softgorkha@gmail.com</h2>
+			</div> 
 
         <button aria-label="menu-btn" type="button" class="menu-btn inline-block md:hidden active:scale-90 transition">
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="#fff">
