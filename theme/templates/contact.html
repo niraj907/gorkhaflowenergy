@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
     Contact
@@ -46,21 +47,29 @@
                 <input type="text" name="name" placeholder="Name" required
                     class="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-md border border-gray-200 focus:outline-none pl-4 mb-10" />
 
+                   
                 <input type="email" name="email" placeholder="Email" required
                     class="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-md border border-gray-200 focus:outline-none pl-4 mb-10" />
 
-                <!-- Optional country code input if you want separate inputs -->
-                <!-- <input type="text" name="country_code" placeholder="+977" class="w-full h-12 ..."> -->
-                <select name="country_code" class="mb-4 w-full h-12 border border-gray-200 rounded-md px-4">
-                    
-    <option value="+977">+977 (Nepal)</option>
-    <option value="+1">+1 (USA)</option>
-    <option value="+91">+91 (India)</option>
-    <!-- Add more if needed -->
-</select>
 
-                <input type="text" name="contact_Number" placeholder="Phone" required
-                    class="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-md border border-gray-200 focus:outline-none pl-4 mb-10" />
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-10">
+  <!-- Country code select -->
+  <div class="col-span-1">
+    <select name="country_code"
+      class="w-full h-12 text-gray-600 placeholder-gray-400 border border-gray-200 focus:outline-none rounded-md px-4 mb-4 lg:mb-0">
+      <option value="+977">+977 (Nepal)</option>
+      <option value="+1">+1 (USA)</option>
+      <option value="+91">+91 (India)</option>
+    </select>
+  </div>
+
+  <!-- Phone number input (spanning 2 columns on large screens) -->
+  <div class="col-span-1 lg:col-span-2">
+    <input type="text" name="contact_Number" placeholder="Phone" required
+      class="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-md border border-gray-200 focus:outline-none pl-4" />
+  </div>
+</div>
+
 
                 <textarea name="message" placeholder="Message" required rows="4"
                     class="w-full text-gray-600 placeholder-gray-400 bg-transparent text-lg shadow-sm font-normal leading-7 rounded-md border border-gray-200 focus:outline-none p-4 mb-10"></textarea>
@@ -70,7 +79,7 @@
             <div class="g-recaptcha" data-sitekey="6LchtWMrAAAAANTtLfTnXmLQ0b-6I51wTbU3K_07"></div>
 
                 <button type="submit"
-                    class="w-full py-2 h-12 text-white text-base font-semibold leading-6 rounded-full transition-all duration-700 hover:bg-indigo-800 bg-indigo-600 shadow-sm">
+                    class="w-full py-2 mt-8 h-12 text-white text-base font-semibold leading-6 rounded-full transition-all duration-700 hover:bg-indigo-800 bg-indigo-600 shadow-sm">
                     Send
                 </button>
             </form>
@@ -78,79 +87,7 @@
         </div>
 </section>
 
-   <script> document.getElementById('contactForm').addEventListener('submit', function (event) {
-      // 1. Prevent the default form submission
-      event.preventDefault();
-
-      // 2. Show a loading alert
-      Swal.fire({
-        title: 'Sending...',
-        text: 'Please wait while we send your message.',
-        allowOutsideClick: false,
-        didOpen: () => {
-          Swal.showLoading();
-        },
-      });
-
-      const formData = new FormData(this);
-      const url = this.action; // The form's action URL
-
-      // 3. Use Fetch API to send the form data
-      fetch(url, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest', // Important for Django to identify AJAX
-        },
-      })
-        .then((response) => response.json()) // Parse the JSON response from the server
-        .then((data) => {
-          // 4. Handle the server's response
-          if (data.success) {
-            // If the server response indicates success...
-            document.getElementById('contactForm').reset(); // Reset the form fields
-            grecaptcha.reset(); // Reset the reCAPTCHA widget
-
-            // Show the success alert you wanted!
-            Swal.fire({
-              title: 'Success!',
-              text: 'Your message has been sent successfully!',
-              icon: 'success',
-            });
-          } else {
-            // If the server response indicates an error...
-            grecaptcha.reset(); // Reset reCAPTCHA on error too
-            const errors = Object.values(data.errors).flat().join('<br>'); // Format errors
-
-            Swal.fire({
-              title: 'Oops...',
-              html: errors, // Use 'html' to correctly render line breaks
-              icon: 'error',
-            });
-          }
-        })
-        .catch((error) => {
-          // 5. Handle network errors or other unexpected issues
-          console.error('Error:', error);
-          grecaptcha.reset();
-
-          Swal.fire({
-            title: 'An Error Occurred!',
-            text: 'Could not send the message. Please check your connection and try again.',
-            icon: 'error',
-          });
-        });
-    });
-</script>
+<script src="{% static 'js/contact.js' %}"></script>
 
 {% endblock %}
-                <input type="text" class="w-full h-12 text-gray-600 placeholder-gray-400  shadow-sm bg-transparent text-lg font-normal leading-7 rounded-md border border-gray-200 focus:outline-none pl-4 mb-10" placeholder="Name"  required >
-                <input type="text" class="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-md border border-gray-200 focus:outline-none pl-4 mb-10" placeholder="Email"  required >
-                <input type="text" class="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-md border border-gray-200 focus:outline-none pl-4 mb-10" placeholder="Phone"  required >
-                <textarea class="w-full h-32 text-gray-600 placeholder-gray-400 bg-transparent text-lg shadow-sm font-normal leading-7 rounded-md border border-gray-200 focus:outline-none p-4 mb-10 resize-none" placeholder="Message" required></textarea>
-                <button type="submit" class="w-full h-12 text-white text-base font-semibold leading-6 rounded-full transition-all duration-700 hover:bg-indigo-800 bg-indigo-600 shadow-sm">Send</button>
-        </form>
-      </div>
-    </section>
-                      
-    {% endblock %}
+                

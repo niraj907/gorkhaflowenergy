@@ -18,8 +18,8 @@ def view(request):
     return render(request, 'view.html')
 def news(request):
     return render(request, 'news.html')
-def galley(request):
-    return render(request, 'galley.html')
+def gallery(request):
+    return render(request, 'gallery.html')
 def readmore(request):
     return render(request, 'readmore.html')
 def contact(request):
@@ -87,7 +87,7 @@ def contact(request):
                 subject='Contact Us Message from Gorkha-Hills website',
                 body='This is a fallback plain text version.',
                 from_email=settings.DEFAULT_FROM_EMAIL,
-                to=['gamejoker388@gmail.com'],
+                to=['chaudhariiiniraj@gmail.com'],
             )
                 email_msg.attach_alternative(email_body, "text/html")
                 email_msg.send()
