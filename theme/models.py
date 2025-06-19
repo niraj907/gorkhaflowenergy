@@ -39,3 +39,13 @@ class Document(models.Model):
     class Meta:
         verbose_name = "Document"
         verbose_name_plural = "Documents"
+
+
+class NewsItem(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='news_images/')
+    published_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
