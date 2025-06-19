@@ -26,7 +26,10 @@ def view(request):
 def news(request):
     news_list = NewsItem.objects.order_by('-published_date')
     return render(request, 'news.html', {'news_list': news_list})
-
+def gallery(request):
+    return render(request, 'gallery.html')
+def organization(request):
+    return render(request, 'organization.html')
 def news_detail(request, id):
     news_item = get_object_or_404(NewsItem, id=id)
     return render(request, 'readmore.html', {'news_item': news_item})
@@ -99,7 +102,7 @@ def contact(request):
                 subject='Contact Us Message from Gorkha-Hills website',
                 body='This is a fallback plain text version.',
                 from_email=settings.DEFAULT_FROM_EMAIL,
-                to=['gamejoker388@gmail.com'],
+                to=['chaudhariiiniraj@gmail.com'],
             )
                 email_msg.attach_alternative(email_body, "text/html")
                 email_msg.send()
@@ -122,3 +125,8 @@ def contact(request):
         contactform = ContactForm()
         return render(request, 'contact.html', {'contactform': contactform})
 
+def download_view(request):
+    html_content = render_to_string('view.html')
+    response = HttpResponse(html_content, content_type='application/octet-stream')
+    response['Content-Disposition'] = 'attachment; filename="report.html"'
+    return response

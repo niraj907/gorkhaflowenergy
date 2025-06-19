@@ -16,9 +16,16 @@
 
     <link rel="icon" type="image/jpg" href="{% static 'img/logo.jpg' %}" />
 
-    <link href="{% static 'css/dist/styles.css' %}" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  </head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link href="{% static 'css/dist/styles.css' %}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
+  
+  <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+    </script>
+	</head>
 
   <style>
     body {
@@ -109,7 +116,10 @@
               <a class="text-sm" href="{% url 'news' %}">News</a>
             </li>
             <li>
-              <a class="text-sm" href="#">Organization</a>
+              <a class="text-sm"  href="{% url 'gallery' %}" >Gallery</a>
+          </li>
+          <li>
+            <a class="text-sm" href="{% url 'organization' %}">Organization</a>
             </li>
             <li>
               <a class="text-sm" href="#">Project Info</a>
@@ -154,23 +164,6 @@
             </ul>
           </div>
           <div>
-            <h2 class="font-semibold mb-5 text-gray-800">Company</h2>
-            <ul class="text-sm space-y-2">
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">About us</a>
-              </li>
-              <li>
-                <a href="#">Contact us</a>
-              </li>
-              <li>
-                <a href="#">Privacy policy</a>
-              </li>
-            </ul>
-          </div>
-          <div>
             <h2 class="font-semibold mb-5 text-gray-800">Get in touch</h2>
             <div class="text-sm space-y-2">
               <p>+1-212-456-7890</p>
@@ -182,6 +175,8 @@
       <p class="pt-4 text-center text-xs md:text-sm pb-5">Copyright 2024 © Company name. All Right Reserved.</p>
     </footer>
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
