@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+   Organization
+{% endblock title %}
+
+{% block content %}
+<style>
+  .member-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px;
+    background-color: #fff;
+  }
+
+  .member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .member-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .member-info {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    transition: bottom 0.3s ease;
+  }
+
+  .member-card:hover .member-info {
+    bottom: 0;
+  }
+
+  .position-title {
+    padding: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+
+  .board-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #f1f5f9;
+  }
+
+  .board-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #111827;
+  }
+
+  .level-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+</style>
+
+<section class="board-section">
+  <h1 class="board-title">Board of Directors</h1>
+
+  <!-- Level 1: Chairman -->
+  <div class="level-grid">
+    <div class="member-card">
+      <img src="{% static 'img/image1.jpg' %}" alt="Chairman">
+      <div class="member-info">
+        <p><strong>Name:</strong> Ram Bahadur</p>
+        <p><strong>Age:</strong> 52</p>
+        <p><strong>Phone:</strong> 9800000001</p>
+      </div>
+      <div class="position-title">Chairman</div>
+    </div>
+  </div>
+
+  <!-- Level 2: Managing Director -->
+  <div class="level-grid">
+    <div class="member-card">
+      <img src="{% static 'img/image2.jpg' %}" alt="Managing Director">
+      <div class="member-info">
+        <p><strong>Name:</strong> Sita Shrestha</p>
+        <p><strong>Age:</strong> 45</p>
+        <p><strong>Phone:</strong> 9800000002</p>
+      </div>
+      <div class="position-title">Managing Director</div>
+    </div>
+  </div>
+
+  <!-- Level 3: Directors -->
+  <div class="level-grid">
+    <div class="member-card">
+      <img src="{% static 'img/image3.jpg' %}" alt="Director 1">
+      <div class="member-info">
+        <p><strong>Name:</strong> Bikas Rai</p>
+        <p><strong>Age:</strong> 39</p>
+        <p><strong>Phone:</strong> 9800000003</p>
+      </div>
+      <div class="position-title">Director</div>
+    </div>
+
+    <div class="member-card">
+      <img src="{% static 'img/image4.jpg' %}" alt="Director 2">
+      <div class="member-info">
+        <p><strong>Name:</strong> Meena Gurung</p>
+        <p><strong>Age:</strong> 41</p>
+        <p><strong>Phone:</strong> 9800000004</p>
+      </div>
+      <div class="position-title">Director</div>
+    </div>
+
+    <div class="member-card">
+      <img src="{% static 'img/image5.jpg' %}" alt="Director 3">
+      <div class="member-info">
+        <p><strong>Name:</strong> Ramesh Karki</p>
+        <p><strong>Age:</strong> 43</p>
+        <p><strong>Phone:</strong> 9800000005</p>
+      </div>
+      <div class="position-title">Director</div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -23,6 +23,8 @@ def news(request):
     return render(request, 'news.html')
 def gallery(request):
     return render(request, 'gallery.html')
+def organization(request):
+    return render(request, 'organization.html')
 def readmore(request):
     return render(request, 'readmore.html')
 
@@ -115,9 +117,3 @@ def contact(request):
     else:
         contactform = ContactForm()
         return render(request, 'contact.html', {'contactform': contactform})
-
-def download_view(request):
-    html_content = render_to_string('view.html')
-    response = HttpResponse(html_content, content_type='application/octet-stream')
-    response['Content-Disposition'] = 'attachment; filename="report.html"'
-    return response
