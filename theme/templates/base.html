@@ -42,7 +42,7 @@
     </a>
 
      <!-- Navbar Links (Right-Aligned) -->
-     <ul class="text-white md:flex hidden items-center gap-3 nav_header px-2">
+     <ul class="text-white md:flex hidden items-center gap-4 nav_header">
      <li><a class="hover:text-white/70 transition" href="{% url 'index' %}">Home</a></li>
         <li><a class="hover:text-white/70 transition" href="{% url 'documents' %}">Document</a></li>
         <li><a class="hover:text-white/70 transition" href="#">Status</a></li>
@@ -56,14 +56,14 @@
     </ul>
 
         <a href="{% url 'login' %}" type="button" class="bg-orange-400  text-white btn_login  md:inline hidden text-sm hover:opacity-90 active:scale-95 transition-all py-2 px-4 rounded-md">
-        Get started
+        Login
     </a>
 
       <!-- Right -->
     <div class="text-[14px]">
 			  <h2 class="text-white">Designed By :</h2>
-			  <h2 class="text-yellow-600" >GorkhaSoft Pvt.Ltd</h2>
-			  <h2 class="text-white">Email: softgorkha@gmail.com</h2>
+			  <h2 class="text-indigo-800" >GorkhaSoft Pvt.Ltd</h2>
+			  <h2 class="text-white hover:text-indigo-800">Email: softgorkha@gmail.com</h2>
 			</div>
 
  <!--  Menu Button -->
@@ -107,7 +107,7 @@
           </li>
         </ul>
         <a href="{% url 'login' %}"  type="button" class="bg-orange-400  text-white mt-6 inline md:hidden text-sm hover:opacity-90 active:scale-95 transition-all p-2 rounded-md">
-            Get started
+            Login
         </a>
     </div>
 </nav>
