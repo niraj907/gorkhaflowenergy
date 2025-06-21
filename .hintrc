@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "-webkit-text-size-adjust",
+          "border-color: color-mix(in srgb, oklch(55.1% 0.027 264.364) 30%, transparent)",
+          "color: color-mix(in srgb, #fff 70%, transparent)"
+        ]
+      }
+    ]
+  }
+}

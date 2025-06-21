@@ -1,37 +1,42 @@
 {% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-        <title>
+  <head>
+    <title>
       {% block title %}
-
+        Sherpa Sewa Kendra
       {% endblock %}
     </title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		{% tailwind_css %}
 
-  <link rel="icon" type="image/jpg" href="{% static 'img/logo.jpg' %}" />
- <!-- Material Icon Link -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link href="{% static 'css/dist/styles.css' %}" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% tailwind_css %}
 
-   <!-- Jquery Link -->
-  <script src=
-"https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-    </script>
+    <link rel="icon" type="image/jpg" href="{% static 'img/logo.jpg' %}" />
 
-	</head>
-<style>
-  @media screen and (max-width: 1230px) {
-    .nav_header, .btn_login {
-      display: none;
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <link href="{% static 'css/dist/styles.css' %}" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+
+  <style>
+    body {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
     }
-  }
-</style>
+    @media screen and (max-width: 1230px) {
+      .nav_header,
+      .btn_login {
+        display: none;
+      }
+    }
+  </style>
 
 <body>
 
@@ -114,7 +119,8 @@
 
     {% block content %}
 
-    {% endblock %}
+      {% endblock %}
+    </div>
 
         <!-- Footer -->
 <footer class="px-10 pt-8 w-full text-gray-500">
@@ -158,6 +164,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
   </body>
 </html>

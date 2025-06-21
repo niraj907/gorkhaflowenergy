@@ -7,6 +7,7 @@ from django.http import HttpResponse, JsonResponse
 from django.template.loader import render_to_string
 from theme.forms import ContactForm
 from theme.models import *
+from django.shortcuts import get_object_or_404
 
 
 def index(request):
@@ -19,14 +20,20 @@ def documents_view(request):
 def view(request):
     return render(request, 'view.html')
 
+# def news(request):
+#     return render(request, 'news.html')
+
 def news(request):
-    return render(request, 'news.html')
+    news_list = NewsItem.objects.order_by('-published_date')
+    return render(request, 'news.html', {'news_list': news_list})
 def gallery(request):
     return render(request, 'gallery.html')
 def organization(request):
     return render(request, 'organization.html')
-def readmore(request):
-    return render(request, 'readmore.html')
+def news_detail(request, id):
+    news_item = get_object_or_404(NewsItem, id=id)
+    return render(request, 'readmore.html', {'news_item': news_item})
+
 
 def contact(request):
     return render(request, 'contact.html')
@@ -117,3 +124,9 @@ def contact(request):
     else:
         contactform = ContactForm()
         return render(request, 'contact.html', {'contactform': contactform})
+
+def download_view(request):
+    html_content = render_to_string('view.html')
+    response = HttpResponse(html_content, content_type='application/octet-stream')
+    response['Content-Disposition'] = 'attachment; filename="report.html"'
+    return response
