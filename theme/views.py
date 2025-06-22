@@ -16,9 +16,6 @@ def index(request):
         'homepage_news': homepage_news
     })
 
-
-
-
 def documents_view(request):
     documents = Document.objects.all()
     return render(request, 'document.html', {'documents': documents})
