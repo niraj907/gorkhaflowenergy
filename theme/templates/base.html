@@ -17,6 +17,12 @@
     <link rel="icon" type="image/jpg" href="{% static 'img/logo.jpg' %}" />
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<!-- Add in <head> -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
 
     <link href="{% static 'css/dist/styles.css' %}" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
@@ -67,7 +73,7 @@
       <!-- Right -->
     <div class="text-[14px]">
 			  <h2 class="text-white">Designed By :</h2>
-			  <h2 class="text-indigo-800" >GorkhaSoft Pvt.Ltd</h2>
+			  <a href="https://gorkhasoft.com/" target="_blank" class="text-indigo-800 cursor-pointer hover:border-b border-indigo-800 py-0.5" >GorkhaSoft Pvt.Ltd</a>
 			  <h2 class="text-white hover:text-indigo-800">Email: softgorkha@gmail.com</h2>
 			</div>
 
@@ -114,6 +120,7 @@
         <a href="{% url 'login' %}"  type="button" class="bg-orange-400  text-white mt-6 inline md:hidden text-sm hover:opacity-90 active:scale-95 transition-all p-2 rounded-md">
             Login
         </a>
+        
     </div>
 </nav>
 
@@ -158,7 +165,21 @@
       </div>
       <p class="pt-4 text-center text-xs md:text-sm pb-5">Copyright 2024 © Company name. All Right Reserved.</p>
     </footer>
+<!-- Include SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<script>
+  {% if messages %}
+    {% for message in messages %}
+      Swal.fire({
+        title: "{{ message.tags|capfirst }}!",
+        text: "{{ message }}",
+        icon: "{% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% else %}info{% endif %}",
+        confirmButtonText: 'OK'
+      });
+    {% endfor %}
+  {% endif %}
+</script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 

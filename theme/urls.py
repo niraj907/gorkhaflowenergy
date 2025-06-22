@@ -14,9 +14,9 @@ urlpatterns = [
     path('gallery/', gallery, name='gallery'),
     path('organization/', organization, name='organization'),
     path('news/<int:id>/', views.news_detail, name='news_detail'),
-    path('login/', login, name='login'), 
+    path('login/', login_view, name='login'), 
     path('signup/', signup, name='signup'), 
-    path('', index, name='index'),
+ path('', index, name='index'),
 ]
 # Serve media files during development
 if settings.DEBUG:

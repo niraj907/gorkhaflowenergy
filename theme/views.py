@@ -1,7 +1,9 @@
 from email.message import EmailMessage
 from smtplib import SMTPException
 from django.conf import settings
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 from django.core.mail import EmailMultiAlternatives
 from django.http import HttpResponse, JsonResponse
 from django.template.loader import render_to_string
@@ -130,3 +132,23 @@ def download_view(request):
     response = HttpResponse(html_content, content_type='application/octet-stream')
     response['Content-Disposition'] = 'attachment; filename="report.html"'
     return response
+
+
+
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        if username == "john" and password == "123":
+            request.session['user'] = username
+            messages.success(request, "You have been successfully logged in!")
+            return redirect('index')
+        else:
+            messages.error(request, "Invalid username or password.")
+            return redirect('login')
+            
+    return render(request, 'login.html')
+
+

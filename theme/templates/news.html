@@ -4,8 +4,8 @@
   News
 {% endblock %}
 
-{% block content %}
-  <section class="bg-white py-24">
+{% block content %}  
+  <section class="bg-white py-8">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <h1 class="text-center text-xl md:text-4xl font-bold text-gray-900 mb-12">Latest News</h1>
 
@@ -16,7 +16,7 @@
             <img class="rounded-t-lg h-48 w-full object-cover" src="{{ item.image.url }}" alt="{{ item.title }}" />
             <div class="p-5">
               <h2 class="text-gray-900 text-xl font-semibold mt-2">{{ item.title }}</h2>
-              <p class="text-gray-400 text-sm font-semibold py-1">{{ item.published_date }}</p>
+              <p class="text-gray-400 text-sm font-semibold py-1">{{ item.published_date|date:"F d, Y, h:i a" }}</p>
               <p class="text-gray-600 my-3 line-clamp-3">{{ item.description|truncatewords:25 }}</p>
               <a href="{% url 'news_detail' item.id %}" class="inline-block mt-4 text-indigo-600 hover:underline font-semibold">Read More &rarr;</a>
             </div>

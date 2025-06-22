@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
     Login
@@ -18,51 +19,42 @@
 
   <!-- Login Form Section -->
   <div class="w-full md:w-1/2 flex items-center justify-center px-6 py-24 md:py-12 bg-[#E4E6F2]">
-    <form class="w-full max-w-md space-y-6">
+    <form action="{% url 'login' %}"  method="POST" class="w-full max-w-md space-y-6">
+      {% csrf_token %}
     <div>
         <h2 class="text-3xl font-bold text-gray-800">Sign in</h2>
         <p class="text-sm text-gray-500 mt-2">Welcome back! Please sign in to continue</p>
       </div>
-
-      <!-- Google Button -->
-      <button
-        type="button"
-        class="w-full flex items-center justify-center gap-3 border border-gray-300 rounded-md py-2 hover:bg-gray-100"
-      >
-        <img
-          src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/login/googleLogo.svg"
-          alt="Google Logo"
-          class="h-5"
-        />
-        <span class="text-sm text-gray-700">Continue with Google</span>
-      </button>
-
-      <!-- Divider -->
-      <div class="flex items-center gap-4">
-        <hr class="flex-grow border-gray-300" />
-        <span class="text-sm text-gray-400">or</span>
-        <hr class="flex-grow border-gray-300" />
-      </div>
-
-      <!-- Email Input -->
+     
+      <!-- Username Input -->
       <div class="relative">
         <input
-          type="email"
-          placeholder="Email"
+          type="text"
+          placeholder="Username"
+          name="username"
           class="w-full border border-gray-300 rounded-md py-2 px-4 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-indigo-400"
           required
         />
       </div>
 
       <!-- Password Input -->
-      <div class="relative">
-        <input
-          type="password"
-          placeholder="Password"
-          class="w-full border border-gray-300 rounded-md py-2 px-4 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-indigo-400"
-          required
-        />
-      </div>
+<div class="relative">
+  <input
+    id="password"
+    type="password"
+    placeholder="Password"
+    name="password"
+    class="w-full border border-gray-300 rounded-md py-2 px-4 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-indigo-400"
+    required
+  />
+  <span
+    id="togglePassword"
+    class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer"
+  >
+    <i class="fas fa-eye" id="eyeIcon"></i>
+  </span>
+</div>
+
 
       <!-- Remember Me & Forgot Password -->
       <div class="flex justify-between text-sm text-gray-600">
@@ -80,6 +72,8 @@
       >
         Login
       </button>
+ 
+
 
       <!-- Sign Up Link -->
       <p class="text-sm text-center text-gray-600">
@@ -89,5 +83,21 @@
     </form>
   </div>
 </div>
+ <script src="{% static 'js/login.js' %}"></script>
+<!-- Include SweetAlert CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  {% if messages %}
+    {% for message in messages %}
+      Swal.fire({
+        title: "{{ message.tags|capfirst }}!",
+        text: "{{ message }}",
+        icon: "{% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% else %}info{% endif %}",
+        confirmButtonText: 'OK'
+      });
+    {% endfor %}
+  {% endif %}
+</script>
 
 {% endblock %}
