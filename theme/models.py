@@ -49,3 +49,30 @@ class NewsItem(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Album(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True)
+    cover = models.ImageField(upload_to='album_covers/')
+
+    def __str__(self):
+        return self.name
+
+class Photo(models.Model):
+    album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='photos')
+    image = models.ImageField(upload_to='album_photos/')
+    caption = models.CharField(max_length=255, blank=True)
+
+    def __str__(self):
+        return f"{self.album.name} - {self.caption}"
+
+class HomepageNews(models.Model):
+    message = models.TextField()
+    date = models.DateField(auto_now_add=True)  # or manually editable if needed
+
+    def __str__(self):
+        return f"News ({self.date}): {self.message[:50]}"
+    
+    class Meta:
+        verbose_name = "Homepage News"
+        verbose_name_plural = "Homepage News"

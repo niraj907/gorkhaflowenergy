@@ -49,9 +49,12 @@
     <nav class="h-[70px] relative w-full px-7 flex items-center justify-between z-30 bg-gradient-to-r from-indigo-700 to-violet-500 transition-all">  
     <!-- Logo -->
       <a href="{% url 'index' %}">
-        <img class="h-9" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoWhite.svg" alt="Logo">
+        <h1 class="text-3xl font-bold text-white ">
+          Ice-Land Power
+        </h1>
     </a>
 
+<<<<<<< HEAD
      <!-- Navbar Links (Right-Aligned) -->
      <ul class="text-white md:flex hidden items-center gap-4 nav_header">
      <li><a class="hover:text-white/70 transition" href="{% url 'index' %}">Home</a></li>
@@ -65,6 +68,38 @@
         <li><a class="hover:text-white/70 transition" href="#">Project Info</a></li>
         <li><a class="hover:text-white/70 transition" href="{% url 'contact' %}" >Contact</a></li>
     </ul>
+=======
+        <ul class="text-white md:flex hidden items-center gap-6 nav_header">
+          <li>
+            <a class="hover:text-white/70 transition" href="{% url 'index' %}">Home</a>
+          </li>
+
+          <li>
+            <a class="hover:text-white/70 transition" href="{% url 'documents' %}">Document</a>
+          </li>
+          <li>
+            <a class="hover:text-white/70 transition" href="#">Status</a>
+          </li>
+          <li>
+            <a class="hover:text-white/70 transition" href="#">Work Progress</a>
+          </li>
+          <li>
+            <a class="hover:text-white/70 transition" href="#">Site Progress</a>
+          </li>
+          <li>
+            <a class="hover:text-white/70 transition" href="{% url 'news' %}">News</a>
+          </li>
+          <li>
+            <a class="hover:text-white/70 transition" href="{% url 'gallery' %}">Gallery</a>
+          </li>
+          <li>
+            <a class="hover:text-white/70 transition" href="#">Project Info</a>
+          </li>
+          <li>
+            <a class="hover:text-white/70 transition" href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul>
+>>>>>>> 8df17accf5cf30a199d8d33824933808cbebeb7c
 
         <a href="{% url 'login' %}" type="button" class="bg-orange-400  text-white btn_login  md:inline hidden text-sm hover:opacity-90 active:scale-95 transition-all py-2 px-4 rounded-md">
         Login
@@ -72,6 +107,7 @@
 
       <!-- Right -->
     <div class="text-[14px]">
+
 			  <h2 class="text-white">Designed By :</h2>
 			  <a href="https://gorkhasoft.com/" target="_blank" class="text-indigo-800 cursor-pointer hover:border-b border-indigo-800 py-0.5" >GorkhaSoft Pvt.Ltd</a>
 			  <h2 class="text-white hover:text-indigo-800">Email: softgorkha@gmail.com</h2>

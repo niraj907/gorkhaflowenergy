@@ -239,9 +239,12 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
+<<<<<<< HEAD
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
+=======
+>>>>>>> 8df17accf5cf30a199d8d33824933808cbebeb7c
   .top-4 {
     top: calc(var(--spacing) * 4);
   }
@@ -390,6 +393,12 @@
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
+<<<<<<< HEAD
+=======
+  .h-5 {
+    height: calc(var(--spacing) * 5);
+  }
+>>>>>>> 8df17accf5cf30a199d8d33824933808cbebeb7c
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
@@ -715,9 +724,12 @@
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
   }
+<<<<<<< HEAD
   .py-0\.5 {
     padding-block: calc(var(--spacing) * 0.5);
   }
+=======
+>>>>>>> 8df17accf5cf30a199d8d33824933808cbebeb7c
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
   }
@@ -760,6 +772,12 @@
   .pb-6 {
     padding-bottom: calc(var(--spacing) * 6);
   }
+<<<<<<< HEAD
+=======
+  .pb-12 {
+    padding-bottom: calc(var(--spacing) * 12);
+  }
+>>>>>>> 8df17accf5cf30a199d8d33824933808cbebeb7c
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
   }
@@ -887,9 +905,12 @@
   .text-indigo-600 {
     color: var(--color-indigo-600);
   }
+<<<<<<< HEAD
   .text-indigo-800 {
     color: var(--color-indigo-800);
   }
+=======
+>>>>>>> 8df17accf5cf30a199d8d33824933808cbebeb7c
   .text-orange-600 {
     color: var(--color-orange-600);
   }
@@ -968,12 +989,15 @@
     }
   }
   @media (hover: hover) {
+<<<<<<< HEAD
     .hover\:border-b:hover {
       border-bottom-style: var(--tw-border-style);
       border-bottom-width: 1px;
     }
   }
   @media (hover: hover) {
+=======
+>>>>>>> 8df17accf5cf30a199d8d33824933808cbebeb7c
     .hover\:bg-blue-700:hover {
       background-color: var(--color-blue-700);
     }
@@ -1108,11 +1132,27 @@
     }
   }
   @media (width >= 48rem) {
+<<<<<<< HEAD
+=======
+    .md\:py-24 {
+      padding-block: calc(var(--spacing) * 24);
+    }
+  }
+  @media (width >= 48rem) {
+>>>>>>> 8df17accf5cf30a199d8d33824933808cbebeb7c
     .md\:pt-10 {
       padding-top: calc(var(--spacing) * 10);
     }
   }
   @media (width >= 48rem) {
+<<<<<<< HEAD
+=======
+    .md\:pt-24 {
+      padding-top: calc(var(--spacing) * 24);
+    }
+  }
+  @media (width >= 48rem) {
+>>>>>>> 8df17accf5cf30a199d8d33824933808cbebeb7c
     .md\:text-4xl {
       font-size: var(--text-4xl);
       line-height: var(--tw-leading, var(--text-4xl--line-height));

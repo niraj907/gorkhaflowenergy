@@ -13,7 +13,10 @@ from django.shortcuts import get_object_or_404
 
 
 def index(request):
-    return render(request, 'hero.html')
+    homepage_news = HomepageNews.objects.order_by('-date')[:12]  # latest 12
+    return render(request, 'hero.html',{
+        'homepage_news': homepage_news
+    })
 
 def documents_view(request):
     documents = Document.objects.all()
@@ -28,10 +31,19 @@ def view(request):
 def news(request):
     news_list = NewsItem.objects.order_by('-published_date')
     return render(request, 'news.html', {'news_list': news_list})
-def gallery(request):
-    return render(request, 'gallery.html')
+
+def gallery_albums(request):
+    albums = Album.objects.all()
+    return render(request, 'gallery.html', {'albums': albums})
+
+def album_detail(request, slug):
+    album = get_object_or_404(Album, slug=slug)
+    photos = album.photos.all()
+    return render(request, 'album_detail.html', {'album': album, 'photos': photos})
+
 def organization(request):
     return render(request, 'organization.html')
+
 def news_detail(request, id):
     news_item = get_object_or_404(NewsItem, id=id)
     return render(request, 'readmore.html', {'news_item': news_item})
