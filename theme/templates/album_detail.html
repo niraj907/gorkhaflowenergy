@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ album.name }} | Gallery
+{% endblock %}
+
+{% block content %}
+<style>
+    .alim img{
+        height: 300px;
+        width: 400px;
+        object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+        .alim img {
+            height: 200px;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .alim img {
+            height: 180px;
+            width: 100%;
+        }
+    }
+</style>
+  <section class="pt-12 md:pt-24 pb-12">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-8 text-center">{{ album.name }}</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {% for photo in photos %}
+          <a href="{{ photo.image.url }}" class="glightbox block" data-gallery="gallery1" data-title="{{ photo.caption }}">
+            <div class="alim w-full h-64 overflow-hidden rounded-lg shadow group">
+              <img src="{{ photo.image.url }}" alt="{{ photo.caption }}" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      GLightbox({
+        selector: 'a.glightbox',
+        touchNavigation: true,
+        loop: true
+      })
+    })
+  </script>
+{% endblock %}
